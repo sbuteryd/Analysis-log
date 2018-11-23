@@ -1,9 +1,9 @@
 import psycopg2
 
-conn = psycopg2.connect("news")
+conn = psycopg2.connect("dbname=news")
 
 cursor = conn.cursor()
-cursor.execute("select log from news ")
+cursor.execute("select * from articles ")
 
 results = cursor.fetchall()
 print(results)
