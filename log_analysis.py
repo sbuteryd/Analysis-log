@@ -7,9 +7,9 @@ cursor = conn.cursor()
 
 
 def get_most_pupular():
-    cursor.execute("create view log_remove_root_path_test as select substring(path,10) from log;")
+    cursor.execute("create view log_remove_root_path_fist as select substring(path,10),status from log where status = '200 OK';")
     cursor.execute(
-        "select substring,count(substring) as num from log_remove_root_path join articles  on log_remove_root_path.substring = articles.slug group by log_remove_root_path.substring order by num desc limit 3 ;")
+        "select substring,count(substring) as num from log_remove_root_path_fist  join articles  on log_remove_root_path_fist.substring = articles.slug group by log_remove_root_path_fist.substring order by num desc limit 3 ;")
     results = cursor.fetchall()
     for i in results:
         em_dash = i[0].replace('-', ' ')
