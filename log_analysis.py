@@ -1,7 +1,6 @@
 import psycopg2
 
 
-# cursor.execute("select title from articles ")
 conn = psycopg2.connect("dbname=news")
 cursor = conn.cursor()
 
