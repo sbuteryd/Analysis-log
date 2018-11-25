@@ -7,5 +7,12 @@
 
 ``` python log_analysis.py```
 
-####  create view remove path and status 200ok
-```cursor.execute("create view log_remove_root_path_fist as select substring(path,10),status from log where status = '200 OK';")```
+
+
+####统计所有的访问记录
+![](img/first.png)
+
+####统计最多错误的一天
+
+![](img/second.png)
+
