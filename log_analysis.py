@@ -26,7 +26,21 @@ def get_pupular_authors():
     for i in results:
         em_dash = i[0].replace('-', ' ')
         print(em_dash + " -- " + str(i[1])+' views')
+
     conn.close()
 
+
+def calculate_percentage(num1,num2):
+   # cursor.execute("create view calculate_connect_third as select count(*) from log;")
+   # cursor.execute("create view only_date_third as select date(time),status from log where status = '404 NOT FOUND' ")
+   # cursor.execute("select date ,count(*) as num from only_date_times group by only_date_times.date order by num desc limit 1;")
+       num1 = float(num1)
+       num2 = float(num2)
+       percentage = '{0:.2f}'.format((num1 / num2 * 100))
+       return percentage
+
+
 get_most_pupular()
-get_pupular_authors()
+# get_pupular_authors()
+save = calculate_percentage(1234,1677735)
+print(save)
