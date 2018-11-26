@@ -21,7 +21,7 @@ def get_most_pupular():
 
 def get_pupular_authors():
     cursor.execute("create view articles_authors_second as select slug,name from articles join authors on articles.author = authors.id;")
-    cursor.execute("select name ,count(name) as num  from articles_authors join log_remove_root_path_fist on articles_authors.slug =log_remove_root_path_fist.substring group by name order by num desc")
+    cursor.execute("select name ,count(name) as num  from articles_authors_second join log_remove_root_path_fist on articles_authors_second.slug =log_remove_root_path_fist.substring group by name order by num desc")
     results = cursor.fetchall()
     print("\nmost popular article authors of all time?")
     for i in results:
