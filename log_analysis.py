@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 import psycopg2
 
-
-conn = psycopg2.connect("dbname=news")
+conn = psycopg2.connect("dbname = news")
 cursor = conn.cursor()
 
 
@@ -20,7 +19,7 @@ def get_most_pupular():
     print("\nmost popular three articles of all time?")
     for i in results:
         em_dash = i[0].replace('-', ' ')
-        print(em_dash + " -- " + str(i[1])+' views')
+        print(em_dash + " -- " + str(i[1]) + ' views')
 
 
 def get_pupular_authors():
@@ -36,7 +35,7 @@ def get_pupular_authors():
     print("\nmost popular article authors of all time?")
     for i in results:
         em_dash = i[0].replace('-', ' ')
-        print(em_dash + " -- " + str(i[1])+' views')
+        print(em_dash + " -- " + str(i[1]) + ' views')
 
 
 def calculate_percentage():
@@ -47,7 +46,8 @@ def calculate_percentage():
     return sum
 
 
-def connect_error(sum_all):
+def connect_error():
+
     cursor.execute("create view error_third as select date(time),status "
                    "from log where status = '404 NOT FOUND' ")
 
@@ -59,7 +59,7 @@ def connect_error(sum_all):
     date = results[0][0]
     error_max = error_sum[1]
     print("\nOn which days did more than 1% of requests lead to errors?")
-    text_sum = "{},{} errors".format(date, (error_max/sum_all) * 100)
+    text_sum = "{},{} errors".format(date, (error_max / sum_all) * 100)
     print(text_sum)
 
 
