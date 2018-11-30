@@ -37,4 +37,8 @@ third
 
     (pycodestyle was formerly known as pep8. These are the same thing.)
     
-  
+# NOTE: 安装autopep8 
+$ pip install autopep8  
+
+# NOTE: 对文件进行格式化
+$ autopep8 --in-place --aggressive --aggressive <filename>
