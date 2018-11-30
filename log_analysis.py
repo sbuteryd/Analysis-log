@@ -27,6 +27,7 @@ def get_pupular_authors():
     cursor.execute("create view authors_second as "
                    "select slug,name from articles join "
                    "authors on articles.author = authors.id;")
+
     cursor.execute("select name ,count(name) as num  "
                    "from authors_second join log_fist "
                    "on authors_second.slug = "
@@ -49,6 +50,7 @@ def calculate_percentage():
 def connect_error(sum_all):
     cursor.execute("create view error_third as select date(time),status "
                    "from log where status = '404 NOT FOUND' ")
+
     cursor.execute("select date ,count(*) as num from "
                    "error_third group by error_third.date"
                    " order by num desc limit 1;")
