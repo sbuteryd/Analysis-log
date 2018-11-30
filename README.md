@@ -13,15 +13,6 @@ use python 2.7.6
 
 ``` python log_analysis.py```
 
-
-统计所有的访问记录
-![](img/first.png)
-
-统计最多错误的一天
-
-![](img/second.png)
-
-
 log_fist view 如下内容，找出路径，和成功访问的。
 
 表格内容：
