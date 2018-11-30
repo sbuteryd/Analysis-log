@@ -25,16 +25,17 @@ use python 2.7.6
 log_fist view 如下内容，找出路径，和成功访问的。
 
 表格内容：
-news=> \d log_fist
-  Column   | Type | Modifiers 
------------+------+-----------
- substring | text | 
- status    | text | 
+
+    news=> \d log_fist
+    Column   | Type | Modifiers 
+    -----------+------+-----------
+    substring | text | 
+    status    | text | 
  
       substring       | status 
-----------------------+--------
- candidate-is-jerk    | 200 OK
- goats-eat-googles    | 200 OK
+    ----------------------+--------
+    candidate-is-jerk    | 200 OK
+    goats-eat-googles    | 200 OK
 
  
  
