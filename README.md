@@ -30,5 +30,34 @@ log_fist view 如下内容，找出路径，和成功访问的。
 
  
  
-view: authors_second
+view: authors_second 找出作者的名字
 
+           slug            |          name          
+    ---------------------------+------------------------
+     bad-things-gone           | Anonymous Contributor
+     balloon-goons-doomed      | Markoff Chaney
+     bears-love-berries        | Ursula La Multa
+     candidate-is-jerk         | Rudolf von Treppenwitz
+     goats-eat-googles         | Ursula La Multa
+     media-obsessed-with-bears | Ursula La Multa
+     trouble-for-troubled      | Rudolf von Treppenwitz
+     so-many-bears             | Ursula La Multa
+
+
+view: calculate_third 统计 log的行数
+
+    news=> select count(*) from log;
+    count  
+    ---------
+    1677735
+    (1 row)
+ 
+view: error_third 找出404失败的链接:
+
+        date    |    status     
+    ------------+---------------
+     2016-07-01 | 404 NOT FOUND
+     2016-07-01 | 404 NOT FOUND
+     2016-07-01 | 404 NOT FOUND
+     2016-07-01 | 404 NOT FOUND
+     2016-07-01 | 404 NOT FOUND
