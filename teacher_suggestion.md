@@ -37,8 +37,27 @@ third
 
     (pycodestyle was formerly known as pep8. These are the same thing.)
     
-# NOTE: 安装autopep8 
+## NOTE: 安装autopep8 
 $ pip install autopep8  
 
-# NOTE: 对文件进行格式化
+## NOTE: 对文件进行格式化
 $ autopep8 --in-place --aggressive --aggressive <filename>
+
+
+## sql format
+ For multi-line query statements, using the triple quotation (""") mark,
+makes it easy to understand the code and also more readable.
+To improve readability, capitalize all keywords and separate each new clause by a new line.
+e.g.:
+
+query = """
+SELECT SUBSTRING,
+       count(SUBSTRING) AS num
+FROM log_fist
+JOIN articles ON log_fist.substring = articles.slug
+GROUP BY log_fist.substring
+ORDER BY num DESC
+LIMIT 3 ;
+"""
+Use sql format to get a nice formatting statement.
+SQLFormat is a free online formatter for SQL statements.
