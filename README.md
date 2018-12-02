@@ -24,12 +24,12 @@ cursor.execute("""
 ```
 news=> \d log_fist
     Column   | Type | Modifiers 
-    -----------+------+-----------
+    ----------|------|-----------
     substring | text | 
     status    | text | 
  
 substring       | status 
-----------------------+--------
+----------------|
     candidate-is-jerk    | 200 OK
     goats-eat-googles    | 200 OK
 
@@ -44,7 +44,7 @@ view: authors_second 找出作者的名字
     """
 ```
  slug            |          name          
- ---------------------------+------------------------
+-----------------|--------------------
      bad-things-gone           | Anonymous Contributor
      balloon-goons-doomed      | Markoff Chaney
      bears-love-berries        | Ursula La Multa
