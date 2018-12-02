@@ -61,3 +61,24 @@ LIMIT 3 ;
 """
 Use sql format to get a nice formatting statement.
 SQLFormat is a free online formatter for SQL statements.
+
+## REATE OR REPLACE VIEW' commands in the database.
+:warning: The documentation (README) should contain the 'CREATE OR REPLACE VIEW' commands in the database.
+The VIEWs should not be part of the application code.
+The VIEWs should be available in the database prior to running the application.
+
+
+## hardcoded
+The code connects to and queries an SQL database. It does not use answers hardcoded into the application code.
+
+From last reviewer:
+"Third query is using hardcoded answer."
+
+More about the third question:
+The third question uses two queries for answering the question.
+:warning: This is a project requirement:
+"When the application fetches data from multiple tables, it uses a single query with a JOIN,
+rather than multiple queries.
+Each of the questions must be answered using only one SQL query."
+
+It is OK to add views (CREATE VIEW) to the database, but don't modify or rename the existing table

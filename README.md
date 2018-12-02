@@ -13,8 +13,15 @@ use python 2.7.6
 ``` python log_analysis.py```
 
 log_fist view 如下内容，找出路径，和成功访问的。
-
 表格内容：
+
+```
+cursor.execute("""
+    create view log_fist
+    as select substring(path,10),status from
+    log where status = '200 OK';
+    """
+```
 
     news=> \d log_fist
     Column   | Type | Modifiers 
@@ -31,6 +38,12 @@ log_fist view 如下内容，找出路径，和成功访问的。
  
 view: authors_second 找出作者的名字
 
+```
+    create view authors_second as
+    select slug,name from articles join
+    authors on articles.author = authors.id;
+    """
+```
            slug            |          name          
     ---------------------------+------------------------
      bad-things-gone           | Anonymous Contributor
