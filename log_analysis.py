@@ -46,19 +46,13 @@ def get_pupular_authors():
 
 def calculate_percentage():
     cursor.execute("""
-    select count(*) / (select count(*) from log) from log where status = '404 NOT FOUND';
+    select count(*) / (select count(*) from log)
+    from log where status = '404 NOT FOUND';
     """)
-    
     results = cursor.fetchall()
-    
     print("{}%".format(results[0][0]))
-    
-    
-    
 
 
 get_most_pupular()
-#
 get_pupular_authors()
-
 calculate_percentage()
