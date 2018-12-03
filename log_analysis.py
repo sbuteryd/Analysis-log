@@ -6,7 +6,6 @@ cursor = conn.cursor()
 
 
 def get_most_pupular():
-    
     cursor.execute(
         """
         select substring,count(substring)
@@ -23,7 +22,6 @@ def get_most_pupular():
 
 
 def get_pupular_authors():
-    
     cursor.execute("""
     select name ,count(name) as num
     from authors_second join log_fist
