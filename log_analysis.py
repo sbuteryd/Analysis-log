@@ -7,8 +7,7 @@ cursor = conn.cursor()
 
 def get_most_pupular():
     cursor.execute("""
-    create view log_fist
-    as select substring(path,10),status from
+    select substring(path,10),status from
     log where status = '200 OK';
     """)
     cursor.execute(
@@ -59,8 +58,8 @@ def calculate_percentage():
     
 
 
-# get_most_pupular()
+get_most_pupular()
 #
 # get_pupular_authors()
 
-calculate_percentage()
+# calculate_percentage()
