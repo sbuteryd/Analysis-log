@@ -21,18 +21,12 @@ log_fist view 如下内容，找出路径，和成功访问的。
     log where status = '200 OK';
     """)
 ```
-
-view的内容如下：
- View "public.log_fist"
  
  | Column   | Type | Modifiers 
  |----------|:----------:|:-----------:|
  |substring | text | ||
 
 
- 
- 
- 
 view: authors_second 找出作者的名字
 
 ```
@@ -41,23 +35,8 @@ view: authors_second 找出作者的名字
     authors on articles.author = authors.id;
     """
 ```
-
-
-
 |slug       |  name       
 |---------- |:----------:|
 bad-things-gone|Anonymous Contributor|
-
-
-
-view: calculate_third 统计 log的行数
-
-view: error_third 找出404失败的链接:
-
-date    |    status     
---------|------------
-2016-07-01 | 404 NOT FOUND
-2016-07-01 | 404 NOT FOUND
-
      
  
