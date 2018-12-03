@@ -16,23 +16,19 @@ log_fist view 如下内容，找出路径，和成功访问的。
 表格内容：
 
 ```
-cursor.execute("""
-    create view log_fist
+ create view log_fist
     as select substring(path,10),status from
     log where status = '200 OK';
-    """
+    """)
 ```
-news=> \d log_fist
-    Column   | Type | Modifiers 
-    ----------|------|-----------
-    substring | text | 
-    status    | text | 
- 
-substring       | status 
-----------------|
-    candidate-is-jerk    | 200 OK
-    goats-eat-googles    | 200 OK
+view的内容如下：
+ View "public.log_fist"
+  Column   | Type | Modifiers 
+-----------+------+-----------
+ substring | text | 
 
+
+ 
  
  
 view: authors_second 找出作者的名字
@@ -43,6 +39,7 @@ view: authors_second 找出作者的名字
     authors on articles.author = authors.id;
     """
 ```
+
  slug            |          name          
 -----------------|--------------------
      bad-things-gone           | Anonymous Contributor
