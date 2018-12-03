@@ -52,14 +52,13 @@ bad-things-gone|Anonymous Contributor|
 
 view: calculate_third 统计 log的行数
 
-    news=> select count(*) from log;
+    select count(*) from log;
     count  
     ---------
     1677735
     (1 row)
  
 view: error_third 找出404失败的链接:
-
 
 
 date    |    status     
