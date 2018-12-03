@@ -27,7 +27,6 @@ def get_most_pupular():
 
 def get_pupular_authors():
     cursor.execute("""
-    create view authors_second as
     select slug,name from articles join
     authors on articles.author = authors.id;
     """)
@@ -60,6 +59,6 @@ def calculate_percentage():
 
 get_most_pupular()
 #
-# get_pupular_authors()
+get_pupular_authors()
 
-# calculate_percentage()
+calculate_percentage()
