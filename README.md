@@ -53,10 +53,7 @@ bad-things-gone|Anonymous Contributor|
 view: calculate_third 统计 log的行数
 
     select count(*) from log;
-    count  
-    ---------
-    1677735
-    (1 row)
+    count
  
 view: error_third 找出404失败的链接:
 
