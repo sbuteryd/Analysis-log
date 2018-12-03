@@ -7,11 +7,9 @@
 1、需要把文件Analysis-log.git 放入虚拟你运行(vagrant)
 
 2、 在执行文件前需要安装 psycopg2 模块
-```pip  install psycopg2```
- 
-use python 2.7.6
 
-``` python log_analysis.py```
+```pip  install psycopg2```
+
 
 3、view:log_fist 如下内容，找出路径，和成功访问的,以及如何创建 view。
 
