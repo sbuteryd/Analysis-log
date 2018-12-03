@@ -22,7 +22,7 @@ log_fist view 如下内容，找出路径，和成功访问的。
     """)
 ```
 
-view的内容如下：
+## view的内容如下：
  View "public.log_fist"
  
  | Column   | Type | Modifiers 
@@ -33,7 +33,7 @@ view的内容如下：
  
  
  
-view: authors_second 找出作者的名字
+## view: authors_second 找出作者的名字
 
 ```
     create view authors_second as
@@ -50,12 +50,12 @@ bad-things-gone|Anonymous Contributor|
 
 
 
-view: calculate_third 统计 log的行数
+## view: calculate_third 统计 log的行数
 
     select count(*) from log;
     count
  
-view: error_third 找出404失败的链接:
+## view: error_third 找出404失败的链接:
 
 
 date    |    status     
