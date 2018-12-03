@@ -47,36 +47,20 @@ def get_pupular_authors():
 
 
 def calculate_percentage():
-    cursor.execute("create view calculate_third as select count(*) from log;")
-    cursor.execute("select * from calculate_third")
-    results = cursor.fetchall()
-    sum = results[0]
-    return sum
-
-
-def connect_error():
-
     cursor.execute("""
-    create view error_third as select date(time),status
-    from log where status = '404 NOT FOUND'
+    select count(*) / (select count(*) from log) from log where status = '404 NOT FOUND';
     """)
-
-    cursor.execute("""
-    select date ,count(*) as num from
-    error_third group by error_third.date
-    order by num desc limit 1;""")
+    
     results = cursor.fetchall()
-    error_sum = results[0]
-    date = results[0][0]
-    error_max = error_sum[1]
-    print("\nOn which days did more than 1% of requests lead to errors?")
-    text_sum = "{},{} errors".format(date, (error_max / sum_all) * 100)
-    print(text_sum)
+    
+    print("{}%".format(results[0][0]))
+    
+    
+    
 
 
-get_most_pupular()
+# get_most_pupular()
+#
+# get_pupular_authors()
 
-get_pupular_authors()
-
-sum_all = calculate_percentage()
-connect_error(sum_all[0])
+calculate_percentage()
