@@ -43,6 +43,7 @@ def calculate_percentage():
     from log where status = '404 NOT FOUND';
     """)
     results = cursor.fetchall()
+    print("\nOn which days did more than 1% of requests lead to errors?")
     print("{}%".format(results[0][0]))
 
 
