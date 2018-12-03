@@ -52,11 +52,7 @@ bad-things-gone|Anonymous Contributor|
 
 view: calculate_third 统计 log的行数
 
-    select count(*) from log;
-    count
- 
 view: error_third 找出404失败的链接:
-
 
 date    |    status     
 --------|------------
