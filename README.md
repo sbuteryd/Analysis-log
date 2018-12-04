@@ -36,5 +36,13 @@
 |slug       |  name       
 |---------- |:----------:|
 bad-things-gone|Anonymous Contributor|
-     
- 
+
+
+
+```
+    cursor.execute("""
+     create view error_connect as SELECT time::date AS day, count(*)
+    FROM log WHERE status != '200 OK' GROUP BY day;
+    """)
+    
+```
