@@ -17,7 +17,6 @@
  create view log_fist
     as select substring(path,10),status from
     log where status = '200 OK';
-    """)
 ```
  
  | Column   | Type | Modifiers 
@@ -31,7 +30,6 @@
     create view authors_second as
     select slug,name from articles join
     authors on articles.author = authors.id;
-    """
 ```
 |slug       |  name       
 |---------- |:----------:|
@@ -40,9 +38,8 @@ bad-things-gone|Anonymous Contributor|
 
 5 On which days did more than 1% of requests lead to errors?"
 ```
-    """
+  
      create view error_connect as SELECT time::date AS day, count(*)
     FROM log WHERE status != '200 OK' GROUP BY day;
-    """
     
 ```
