@@ -82,3 +82,38 @@ rather than multiple queries.
 Each of the questions must be answered using only one SQL query."
 
 It is OK to add views (CREATE VIEW) to the database, but don't modify or rename the existing table
+
+
+
+1、
+:bulb: If you are interested, here’s another way to get a solution.
+CTEs, also know as Common Table Expressions, are a way of refactoring a query.
+They let you give the result of a subquery a name and reuse the result multiple times.
+The general syntax of a CTE looks like the following:
+
+WITH <name1> AS (<subquery1>),
+     <name2> AS (<subquery2>),
+     ...
+     <nameN> AS (<subqueryN>)
+  query
+This will first evaluate each of the subqueries and assign the results of each query to the corresponding name.
+Then within the final query, you can use each name to refer to the results of the corresponding query.
+
+:bulb: The suggested query above may be a subquery here
+![Postgres CTE - 通用表格表达式](https://malisper.me/postgres-ctes/?subscribe=success#blog_subscription-3)
+
+
+2、
+You should put the following code within this if statement:
+
+if __name__ == '__main__':
+    # code goes here
+else:
+    print 'Importing ...'
+This code makes sure that this file was run directly, not imported.
+And will avoid executing the code when importing the file.
+
+![Read this to see why](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+
+![If __name__](https://www.quora.com/Why-would-you-use-if-__name__-__main__)
+Doing this, users import your code into their code and run only the functions they need.
