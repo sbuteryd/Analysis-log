@@ -70,4 +70,12 @@ view: error_third 找出404失败的链接:
      2016-07-01 | 404 NOT FOUND
      2016-07-01 | 404 NOT FOUND
      
- 
+
+
+```
+    cursor.execute("""
+     create view error_connect as SELECT time::date AS day, count(*)
+    FROM log WHERE status != '200 OK' GROUP BY day;
+    """)
+    
+```

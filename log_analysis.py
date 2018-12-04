@@ -46,13 +46,14 @@ def get_pupular_authors():
 
 def calculate_percentage():
     cursor.execute("""
-    select count(*) / (select count(*) from log) from log where status = '404 NOT FOUND';
+    select day,round( count*100  / ( select sum(count) from teacher_time),2)
+    from teacher_time ;
     """)
     
     results = cursor.fetchall()
-    
-    print("{}%".format(results[0][0]))
-    
+    print("\nOn which days did more than 1% of requests lead to errors?")
+    for i in results:
+        print("{} - {}%".format(i[0],i[1]))
     
     
 
