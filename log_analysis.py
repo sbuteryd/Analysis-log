@@ -44,7 +44,7 @@ def calculate_percentage():
     print("\nOn which days did more than 1% of requests lead to errors?")
     print("{}%".format(results[0][0]))
     for i in results:
-        print("{} ---- {}%".format(i[0],i[1]))
+        print("{} ---- {}%".format(i[0], i[1]))
 
 
 get_most_pupular()

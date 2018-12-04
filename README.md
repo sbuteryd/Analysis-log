@@ -38,7 +38,7 @@
 bad-things-gone|Anonymous Contributor|
 
 
-
+5 On which days did more than 1% of requests lead to errors?"
 ```
     cursor.execute("""
      create view error_connect as SELECT time::date AS day, count(*)
