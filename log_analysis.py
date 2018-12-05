@@ -37,16 +37,21 @@ def get_pupular_authors():
 
 def calculate_percentage():
     cursor.execute("""
-    select day,round( count*100  / ( select sum(count) from teacher_time),2)
-    from teacher_time ;
+    select day, perc from (
+    select day, round((sum(req)/(select count(*) from log where
+    substring(cast(log.time as text), 0, 11) = day) * 100), 2) as
+    perc from (select substring(cast(log.time as text), 0, 11) as day,
+    count(*) as req from log where status like '%404%' group by day)
+    as log_sum group by day order by perc desc) as resulat
+    where perc >= 1
     """)
     results = cursor.fetchall()
     print("\nOn which days did more than 1% of requests lead to errors?")
-    print("{}%".format(results[0][0]))
     for i in results:
         print("{} ---- {}%".format(i[0], i[1]))
 
+if __name__ == '__main__':
+    get_most_pupular()
+    get_pupular_authors()
+    calculate_percentage()
 
-get_most_pupular()
-get_pupular_authors()
-calculate_percentage()
