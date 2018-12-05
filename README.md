@@ -38,4 +38,4 @@ bad-things-gone|Anonymous Contributor|
 
 5 如何运行 psql:
 
-     要加载数据，请使用命令psql -d news -f newsdata.sql 连接数据库并运行必要的SQL语句。
+要加载数据，请使用命令`psql -d news -f newsdata.sql` 连接数据库并运行必要的SQL语句。
